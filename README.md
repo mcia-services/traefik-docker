@@ -96,7 +96,7 @@ To add more services, just create new files in fail2ban [filter](./scripts/fail2
 
 ## How to deploy 
 
-1. Run the `scripts/install-docker.sh` script to install docker and docker-compose. Alternatively, a group named `docker` can be created and the user added to it to execute the docker command without `sudo`.
+1. Run the `scripts/install-docker.sh` script to install docker and docker-compose. Additionally, a group named `docker` can be created and the user added to it to execute the docker command without `sudo`.
 2. Run `traefik/deploy-traefik.sh` to deploy traefik. This scripts has 3 optional arguments:
    - `-u`: username for the basic-auth in the dashboard web interface.
    - `-p`: password for the basic-auth in the dashboard web interface.
