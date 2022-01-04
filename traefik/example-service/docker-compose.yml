@@ -5,7 +5,7 @@ networks:
     external: true
 
 services:
-  traefik:
+  whoami:
     image: traefik/whoami:latest
     container_name: simple-service
     restart: unless-stopped
@@ -14,4 +14,4 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.entrypoints=websecure"
-      - "traefik.http.routers.traefik-secure.rule=Path(`/whoami`)"
+      - "traefik.http.routers.whoami.rule=Path(`/whoami`)"
