@@ -40,8 +40,8 @@ sudo docker network create --subnet 172.18.0.0/16 --opt com.docker.network.bridg
 
 # 4 create and correct permisions to the acme.json file
 mkdir letsencrypt
-touch acme.json
-chmod 600 ./traefik-config/acme.json
+touch ./letsencrypt/acme.json
+chmod 600 ./letsencrypt/acme.json
 
 # 5 Run the stack
 sudo docker-compose up --detach
