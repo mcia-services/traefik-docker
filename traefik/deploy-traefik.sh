@@ -32,7 +32,7 @@ if [ ! -x "$(command -v yq)" ]; then
   wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq &&\
     chmod +x /usr/bin/yq
 fi
-yq e -i --null-input '.certificateResolvers.letsencrypt.acme.email = "'${email}'"' traefik.yml
+yq e -i --null-input '.certificatesResolvers.letsencrypt.acme.email = "'${email}'"' traefik.yml
 yq e -i --null-input '.http.middlewares.user-auth.basicAuth.users[0] = "'${credentials}'"' configurations/dynamic.yml
 
 # 3 Create the docker network
