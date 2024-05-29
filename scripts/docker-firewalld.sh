@@ -55,12 +55,12 @@ sudo firewall-cmd --permanent --direct --add-rule ipv4 filter DOCKER-USER 1 \
 # 4. Allow access to the Traefik ports
 sudo firewall-cmd --permanent --direct --add-rule ipv4 filter DOCKER-USER 1 \
   -o traefik-proxy \
-  -p tcp -d 172.18.0.2 --dport 80 -j ACCEPT \
+  -p tcp -d 172.18.0.53 --dport 80 -j ACCEPT \
   -m comment --comment 'Allow all traffic to http docker port, traefik'
 
 sudo firewall-cmd --permanent --direct --add-rule ipv4 filter DOCKER-USER 1 \
   -o traefik-proxy \
-  -p tcp -d 172.18.0.2 --dport 443 -j ACCEPT \
+  -p tcp -d 172.18.0.53 --dport 443 -j ACCEPT \
   -m comment --comment 'Allow all traffic to https docker port, traefik'
 
 # 5. Block all other IPs. This rule has lowest precedence, so you can add rules before this one later.

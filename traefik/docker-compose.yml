@@ -11,6 +11,7 @@ services:
     restart: unless-stopped
     networks:
       - proxy
+          ipv4_address: 172.18.0.53
     ports:
       - 80:80
       - 443:443
